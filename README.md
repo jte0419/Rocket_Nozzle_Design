@@ -1,3 +1,7 @@
+# READ THIS!
+
+NOTE: THIS CODE DOES NOT WORK FOR SPECIFIC HEAT RATIOS OTHER THAN 1.4 AT THE MOMENT.  The problem is in the Mach number solution in the PM_EQUATION function.  I have hard-coded g = 1.4 by accident.  This can be easily changed.  I'm currently updating the file to fix that mistake and increase flexibility for the user inputs.  Stay tuned.
+
 # Rocket_Nozzle_Design
 
 This respository contains code to design a rocket nozzle using the method of characteristics.  I will be making a GUI for this in the near future.  For now, the user can change values in the *INPUTS* section in the main file.
