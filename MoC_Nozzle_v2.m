@@ -26,13 +26,14 @@ clc;
 %% INPUTS
 
 % Geometry
-Dstar   = 2;                                                                % Diameter [length]
-geom    = 1;                                                                % [1] Point, [2] Circle
-radius  = 1;                                                                % Radius of throat [length]
-M1      = 1.0001;                                                           % Throat Mach number (> 1) []
-numChar = 50;                                                               % Number of characteristic lines to use [#]
-g       = 1.4;                                                              % Specific heat ratio []
-R       = 287;                                                              % Specific gas constant [J/kg*K]
+Dstar      = 2;                                                             % Diameter [length]
+geom       = 1;                                                             % [1] Point, [2] Circle
+radius     = 1;                                                             % Radius of throat [length]
+M1         = 1.0001;                                                        % Throat Mach number (> 1) []
+numChar    = 50;                                                            % Number of characteristic lines to use [#]
+g          = 1.4;                                                           % Specific heat ratio []
+R          = 287;                                                           % Specific gas constant [J/kg*K]
+outputMesh = 0;                                                             % Output mesh [1 = Yes, 0 = No]
 
 % Set knowns
 Me_Set    = 0;                                                              % Exit Mach number []
@@ -560,8 +561,6 @@ fprintf('SOLUTION FINISHED!\n');
 % plot(dataCFD{1,1}(:,11),dataCFD{1,1}(:,8),'ro');
 
 %% OUTPUT GEO MESH FILE FOR GMSH
-
-outputMesh = 0;
 
 if (outputMesh == 1)
 
