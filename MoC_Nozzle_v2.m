@@ -621,7 +621,7 @@ for i = 1:1:numPts
     if (i ~= numLns)
         fprintf(fid,'Line(%i) = {%i, %i};\r\n',i,i,i+1);
     else
-        fprintf(fid,'Line(%i) = {%i, %i};\n',i,i,1);
+        fprintf(fid,'Line(%i) = {%i, %i};\r\n',i,i,1);
     end
 end
 
@@ -634,11 +634,11 @@ for i = 2:1:numLns
 end
 
 % Write to file
-fprintf(fid,'Line Loop(%i) = {%s};\n',numPts+1,lineStr);
+fprintf(fid,'Line Loop(%i) = {%s};\r\n',numPts+1,lineStr);
 
 % ===== PLANE SURFACE =====
 
-fprintf(fid,'Plane Surface(%i) = {%i};\n',numPts+2,numPts+1);
+fprintf(fid,'Plane Surface(%i) = {%i};\r\n',numPts+2,numPts+1);
 
 % ===== PHYSICAL LINE =====
 
@@ -647,10 +647,10 @@ for i = 2:1:numNozLns
     phyLineNozzle = [phyLineNozzle ', ' num2str(i)];
 end
 
-fprintf(fid,'Physical Line("Outlet") = {%i};\n',numLns-3);
-fprintf(fid,'Physical Line("Symmetry") = {%i};\n',numLns-2);
-fprintf(fid,'Physical Line("Inlet") = {%i};\n',numLns-1);
-fprintf(fid,'Physical Line("Nozzle") = {%s};\n',phyLineNozzle);
+fprintf(fid,'Physical Line("Outlet") = {%i};\r\n',numLns-3);
+fprintf(fid,'Physical Line("Symmetry") = {%i};\r\n',numLns-2);
+fprintf(fid,'Physical Line("Inlet") = {%i};\r\n',numLns-1);
+fprintf(fid,'Physical Line("Nozzle") = {%s};\r\n',phyLineNozzle);
 
 % ===== CHARACTERISTIC LENGTH =====
 
